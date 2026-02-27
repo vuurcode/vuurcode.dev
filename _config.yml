@@ -1,2 +1,4 @@
 title: Vuurcode
-theme: minima
+remote_theme: andrewbanchich/forty-jekyll-theme
+plugins:
+  - jekyll-remote-theme

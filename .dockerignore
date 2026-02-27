@@ -1,0 +1,7 @@
+.bundle
+vendor
+node_modules
+.git
+.gitignore
+.DS_Store
+
