@@ -37,7 +37,7 @@ jobs:
       - name: Install dependencies
         run: |
           gem install bundler
-          bundle install || gem install jekyll
+          bundle install
       - name: Build Jekyll site
         run: bundle exec jekyll build
       - name: Upload artifact
