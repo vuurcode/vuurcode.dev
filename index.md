@@ -1,12 +1,13 @@
 ---
-layout: default
-title: Home
+layout: home
+title: Vuurcode
+subtitle: "A blazing fast Jekyll site with the Forty theme"
+cover-img: /assets/images/banner.jpg
 ---
 
-# Vuurcode
+Welcome to Vuurcode!
 
-This is a sample Jekyll site.  
-You can edit this page in `index.md`.
+This site uses the Forty Jekyll theme. Edit this page in `index.md`.
 
 Check out the [About page](about.md) or read the latest posts below:
 
