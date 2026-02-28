@@ -4,36 +4,44 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
+@use 'sass:color' as color;
+@use '../libs/index' as lib;
+
 /* Menu */
 
 	#menu {
-		@include vendor('transition', (
-			'transform #{_duration(menu)} ease',
-			'opacity #{_duration(menu)} ease',
-			'visibility #{_duration(menu)}'
+		background: lib.palette(bg);
+		border-bottom: solid 1px lib.palette(border);
+		bottom: 0;
+		left: 0;
+		position: fixed;
+		right: 0;
+		top: 0;
+		z-index: lib.misc(z-index-base) + 2;
+
+		@include lib.vendor('transition', (
+			'transform #{lib.duration(menu)} ease',
+			'opacity #{lib.duration(menu)} ease',
+			'visibility #{lib.duration(menu)}'
 		));
-		@include vendor('align-items', 'center');
-		@include vendor('display', 'flex');
-		@include vendor('justify-content', 'center');
-		@include vendor('pointer-events', 'none');
-		background: transparentize(_palette(bg), 0.1);
+		@include lib.vendor('align-items', 'center');
+		@include lib.vendor('display', 'flex');
+		@include lib.vendor('justify-content', 'center');
+		@include lib.vendor('pointer-events', 'none');
+		background: color.adjust(lib.palette(bg), $alpha: -0.1);
 		box-shadow: none;
 		height: 100%;
-		left: 0;
 		opacity: 0;
 		overflow: hidden;
 		padding: 3em 2em;
-		position: fixed;
-		top: 0;
 		visibility: hidden;
 		width: 100%;
-		z-index: _misc(z-index-base) + 2;
 
 		.inner {
-			@include vendor('transition', (
-				'transform #{_duration(menu)} ease-out',
-				'opacity #{_duration(menu)} ease',
-				'visibility #{_duration(menu)}'
+			@include lib.vendor('transition', (
+				'transform #{lib.duration(menu)} ease-out',
+				'opacity #{lib.duration(menu)} ease',
+				'visibility #{lib.duration(menu)}'
 			));
 			@include vendor('transform', 'rotateX(20deg)');
 			-webkit-overflow-scrolling: touch;
@@ -45,53 +53,43 @@
 			visibility: hidden;
 			width: 18em;
 
-			> :first-child {
-				margin-top: _size(element-margin);
-			}
+			> :first-child { margin-top: lib.size(element-margin); }
 
-			> :last-child {
-				margin-bottom: (_size(element-margin) * 1.5);
-			}
+			> :last-child { margin-bottom: (lib.size(element-margin) * 1.5); }
 		}
 
-		ul {
-			margin: 0 0 (_size(element-margin) * 0.5) 0;
+		ul { margin: 0 0 (lib.size(element-margin) * 0.5) 0; }
 
-			&.links {
-				list-style: none;
+		&.links {
+			list-style: none;
+			padding: 0;
+
+			> li {
 				padding: 0;
 
-				> li {
-					padding: 0;
-
-					> a:not(.button) {
-						border: 0;
-						border-top: solid 1px _palette(border);
-						display: block;
-						font-size: 0.8em;
-						font-weight: _font(weight-bold);
-						letter-spacing: _font(letter-spacing-alt);
-						line-height: 4em;
-						text-decoration: none;
-						text-transform: uppercase;
-					}
-
-					> .button {
-						display: block;
-						margin: 0.5em 0 0 0;
-					}
-
-					&:first-child {
-						> a:not(.button) {
-							border-top: 0 !important;
-						}
-					}
+				> a:not(.button) {
+					border: 0;
+					border-top: solid 1px lib.palette(border);
+					display: block;
+					font-size: 0.8em;
+					font-weight: lib.font(weight-bold);
+					letter-spacing: lib.font(letter-spacing-alt);
+					line-height: 4em;
+					text-decoration: none;
+					text-transform: uppercase;
 				}
+
+				> .button {
+					display: block;
+					margin: 0.5em 0 0 0;
+				}
+
+				&:first-child { > a:not(.button) { border-top: 0 !important; } }
 			}
 		}
 
 		.close {
-			@include vendor('transition', 'color #{_duration(transition)} ease-in-out');
+			@include lib.vendor('transition', 'color #{lib.duration(transition)} ease-in-out');
 			-webkit-tap-highlight-color: rgba(0,0,0,0);
 			border: 0;
 			cursor: pointer;
@@ -110,7 +108,7 @@
 			width: 8em;
 
 			&:before, &:after {
-				@include vendor('transition', 'opacity #{_duration(transition)} ease-in-out');
+				@include lib.vendor('transition', 'opacity #{lib.duration(transition)} ease-in-out');
 				background-position: center;
 				background-repeat: no-repeat;
 				content: '';
@@ -123,11 +121,11 @@
 			}
 
 			&:before {
-				background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" zoomAndPan="disable"><style>line { stroke: #{_palette(fg-bold)}; stroke-width: 2; }</style><line x1="0" y1="0" x2="20" y2="20" /><line x1="20" y1="0" x2="0" y2="20" /></svg>');
+				background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" zoomAndPan="disable"><style>line { stroke: #{lib.palette(fg-bold)}; stroke-width: 2; }</style><line x1="0" y1="0" x2="20" y2="20" /><line x1="20" y1="0" x2="0" y2="20" /></svg>');
 			}
 
 			&:after {
-				background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" zoomAndPan="disable"><style>line { stroke: #{_palette(highlight)}; stroke-width: 2; }</style><line x1="0" y1="0" x2="20" y2="20" /><line x1="20" y1="0" x2="0" y2="20" /></svg>');
+				background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" zoomAndPan="disable"><style>line { stroke: #{lib.palette(highlight)}; stroke-width: 2; }</style><line x1="0" y1="0" x2="20" y2="20" /><line x1="20" y1="0" x2="0" y2="20" /></svg>');
 				opacity: 0;
 			}
 
@@ -141,7 +139,7 @@
 
 	body.is-ie {
 		#menu {
-			background: transparentize(_palette(bg-alt), 0.025);
+			background: color.adjust(lib.palette(bg-alt), $alpha: -0.025);
 		}
 	}
 
@@ -163,7 +161,7 @@
 			visibility: visible;
 
 			.inner {
-				@include vendor('transform', 'none');
+				@include lib.vendor('transform', 'none');
 				opacity: 1;
 				visibility: visible;
 			}

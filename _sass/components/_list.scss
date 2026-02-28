@@ -4,11 +4,14 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
+@use '../libs/index' as lib;
+@use 'sass:math' as math;
+
 /* List */
 
 	ol {
 		list-style: decimal;
-		margin: 0 0 _size(element-margin) 0;
+		margin: 0 0 lib.size(element-margin) 0;
 		padding-left: 1.25em;
 
 		li {
@@ -18,7 +21,7 @@
 
 	ul {
 		list-style: disc;
-		margin: 0 0 _size(element-margin) 0;
+		margin: 0 0 lib.size(element-margin) 0;
 		padding-left: 1em;
 
 		li {
@@ -30,11 +33,11 @@
 			padding-left: 0;
 
 			li {
-				border-top: solid 1px _palette(border);
+				border-top: solid 1px lib.palette(border);
 				padding: 0.5em 0;
 
 				&:first-child {
-					border-top: 0;
+					border-top: 0 !important;
 					padding-top: 0;
 				}
 			}
@@ -54,7 +57,7 @@
 				}
 			}
 
-			@include breakpoint(small) {
+			@include lib.breakpoint(small) {
 				li {
 					padding: 0 0.75em 0 0;
 				}
@@ -68,7 +71,7 @@
 
 			li {
 				display: inline-block;
-				padding: 0 (_size(element-margin) * 0.5) 0 0;
+				padding: 0 (lib.size(element-margin) * 0.5) 0 0;
 				vertical-align: middle;
 
 				&:last-child {
@@ -78,14 +81,14 @@
 
 			&.small {
 				li {
-					padding: 0 (_size(element-margin) * 0.5) 0 0;
+					padding: 0 (lib.size(element-margin) * 0.5) 0 0;
 				}
 			}
 
 			&.vertical {
 				li {
 					display: block;
-					padding: (_size(element-margin) * 0.5) 0 0 0;
+					padding: (lib.size(element-margin) * 0.5) 0 0 0;
 
 					&:first-child {
 						padding-top: 0;
@@ -107,14 +110,14 @@
 
 			&.fit {
 				display: table;
-				margin-left: (_size(element-margin) * -0.5);
+				margin-left: (lib.size(element-margin) * -0.5);
 				padding: 0;
 				table-layout: fixed;
-				width: calc(100% + #{(_size(element-margin) * 0.5)});
+				width: calc(100% + #{(lib.size(element-margin) * 0.5)});
 
 				li {
 					display: table-cell;
-					padding: 0 0 0 (_size(element-margin) * 0.5);
+					padding: 0 0 0 (lib.size(element-margin) * 0.5);
 
 					> * {
 						margin-bottom: 0;
@@ -122,11 +125,11 @@
 				}
 
 				&.small {
-					margin-left: (_size(element-margin) * -0.5);
-					width: calc(100% + #{(_size(element-margin) * 0.5)});
+					margin-left: (lib.size(element-margin) * -0.5);
+					width: calc(100% + #{(lib.size(element-margin) * 0.5)});
 
 					li {
-						padding: 0 0 0 (_size(element-margin) * 0.5);
+						padding: 0 0 0 (lib.size(element-margin) * 0.5);
 					}
 				}
 			}
@@ -134,15 +137,15 @@
 	}
 
 	dl {
-		margin: 0 0 _size(element-margin) 0;
+		margin: 0 0 lib.size(element-margin) 0;
 
 		dt {
 			display: block;
-			font-weight: _font(weight-bold);
-			margin: 0 0 (_size(element-margin) * 0.5) 0;
+			font-weight: lib.font(weight-bold);
+			margin: 0 0 (lib.size(element-margin) * 0.5) 0;
 		}
 
 		dd {
-			margin-left: _size(element-margin);
+			margin-left: lib.size(element-margin);
 		}
 	}

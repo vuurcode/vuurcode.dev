@@ -4,6 +4,9 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
+@use '../libs/index' as lib;
+@use 'sass:color' as color;
+
 /* Section/Article */
 
 	section, article {
@@ -19,29 +22,16 @@
 			width: -ms-max-content;
 			width: max-content;
       max-width: 100%;
-			margin-bottom: _size(element-margin);
+			margin-bottom: lib.size(element-margin);
 
 			> :first-child {
 				  margin-bottom: 0;
 				  width: calc(100% + 0.5em);
 
-				  &:after {
-					    content: '';
-					    background-color: _palette(fg-bold);
-					    display: block;
-					    height: 2px;
-					    margin: 0.325em 0 0.5em 0;
-					    width: 100%;
-				  }
+				  &:after { content: ''; background-color: lib.palette(fg-bold); display: block; height: 2px; margin: 0.325em 0 0.5em 0; width: 100%; }
 			}
 
-			> p {
-				font-size: 0.7em;
-				font-weight: _font(weight-bold);
-				letter-spacing: _font(letter-spacing-alt);
-				margin-bottom: 0;
-				text-transform: uppercase;
-			}
+			> p { font-size: 0.7em; font-weight: lib.font(weight-bold); letter-spacing: lib.font(letter-spacing-alt); margin-bottom: 0; text-transform: uppercase; }
 
 			body.is-ie & {
 				> :first-child {
@@ -58,13 +48,5 @@
 			}
 		}
 
-		@include breakpoint(small) {
-			&.major {
-				> p {
-					br {
-						display: none;
-					}
-				}
-			}
-		}
+		@include lib.breakpoint(small) { &.major { > p { br { display: none; } } } }
 	}

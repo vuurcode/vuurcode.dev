@@ -1,3 +1,5 @@
+@use '../libs/index' as lib;
+//
 ///
 /// Forty by HTML5 UP
 /// html5up.net | @ajlkn
@@ -7,7 +9,7 @@
 /* Contact */
 
 	#contact {
-		border-bottom: solid 1px _palette(border);
+		border-bottom: solid 1px lib.palette(border);
 		overflow-x: hidden;
 
 		> .inner {
@@ -15,8 +17,8 @@
 			padding: 0 !important;
 
 			> :nth-child(2n - 1) {
-				@include padding(4em, 0, (0, 3em, 0, 0));
-				border-right: solid 1px _palette(border);
+				@include lib.padding(4em, 0, (0, 3em, 0, 0));
+				border-right: solid 1px lib.palette(border);
 				width: 60%;
 				z-index: 1;
 			}
@@ -30,11 +32,11 @@
 				padding: 0;
 
 				> * {
-					@include padding(3em, 0, (0, 0, 0, 3em));
+					@include lib.padding(3em, 0, (0, 0, 0, 3em));
 					position: relative;
 
 					&:before {
-						border-top: solid 1px _palette(border);
+						border-top: solid 1px lib.palette(border);
 						content: '';
 						display: block;
 						margin-left: -3em;
@@ -57,7 +59,7 @@
 				display: block;
 
 				> :nth-child(2n - 1) {
-					@include padding(4em, 0, (0, 0, 0, 0));
+					@include lib.padding(4em, 0, (0, 0, 0, 0));
 					border-right: 0;
 					width: 100%;
 				}
@@ -69,7 +71,7 @@
 
 				> .split {
 					> * {
-						@include padding(3em, 0, (0, 0, 0, 0));
+						@include lib.padding(3em, 0, (0, 0, 0, 0));
 
 						&:before {
 						}
@@ -87,7 +89,7 @@
 		@include breakpoint(small) {
 			> .inner {
 				> :nth-child(2n - 1) {
-					@include padding(3em, 0, (0, 0, 0, 0));
+					@include lib.padding(3em, 0, (0, 0, 0, 0));
 				}
 			}
 		}

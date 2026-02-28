@@ -1,4 +1,7 @@
-///
+@use 'sass:color' as color;
+@use '../libs/index' as lib;
+
+////
 /// Forty by HTML5 UP
 /// html5up.net | @ajlkn
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
@@ -7,10 +10,10 @@
 /* Banner */
 
 	#banner {
-		@include vendor('align-items', 'center');
-		@include vendor('background-image', 'url("../images/banner.jpg")');
-		@include vendor('display', 'flex');
-		@include padding(4em, 0, (2em, 0, 0, 0));
+		@include lib.vendor('align-items', 'center');
+		@include lib.vendor('background-image', 'url("../images/banner.jpg")');
+		@include lib.vendor('display', 'flex');
+		@include lib.padding(4em, 0, (2em, 0, 0, 0));
 		background-attachment: fixed;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -25,10 +28,10 @@
 		top: -3.25em;
 
 		&:after {
-			@include vendor('transition', 'opacity #{_duration(banner)} ease');
-			@include vendor('transition-delay', '0.75s');
-			@include vendor('pointer-events', 'none');
-			background-color: _palette(bg);
+			@include lib.vendor('transition', 'opacity #{lib.duration(banner)} ease');
+			@include lib.vendor('transition-delay', '0.75s');
+			@include lib.vendor('pointer-events', 'none');
+			background-color: lib.palette(bg);
 			content: '';
 			display: block;
 			height: 100%;
@@ -45,7 +48,7 @@
 		}
 
 		> .inner {
-			@include vendor('transition', (
+			@include lib.vendor('transition', (
 				'opacity 1.5s ease',
 				'transform 0.5s ease-out',
 				'filter 0.5s ease',
@@ -72,9 +75,9 @@
 			}
 
 			.content {
-				@include vendor('display', 'flex');
-				@include vendor('align-items', 'center');
-				margin: 0 0 _size(element-margin) 0;
+				@include lib.vendor('display', 'flex');
+				@include lib.vendor('align-items', 'center');
+				margin: 0 0 lib.size(element-margin) 0;
 
 				> * {
 					margin-left: 1.5em;
@@ -87,8 +90,8 @@
 
 				p {
 					font-size: 0.7em;
-					font-weight: _font(weight-bold);
-					letter-spacing: _font(letter-spacing-alt);
+					font-weight: lib.font(weight-bold);
+					letter-spacing: lib.font(letter-spacing-alt);
 					text-transform: uppercase;
 				}
 			}
@@ -104,12 +107,12 @@
 			}
 		}
 
-		&.style1 { &:after { background-color: _palette(accent1); } }
-		&.style2 { &:after { background-color: _palette(accent2); } }
-		&.style3 { &:after { background-color: _palette(accent3); } }
-		&.style4 { &:after { background-color: _palette(accent4); } }
-		&.style5 { &:after { background-color: _palette(accent5); } }
-		&.style6 { &:after { background-color: _palette(accent6); } }
+		&.style1 { &:after { background-color: lib.palette(accent1); } }
+		&.style2 { &:after { background-color: lib.palette(accent2); } }
+		&.style3 { &:after { background-color: lib.palette(accent3); } }
+		&.style4 { &:after { background-color: lib.palette(accent4); } }
+		&.style5 { &:after { background-color: lib.palette(accent5); } }
+		&.style6 { &:after { background-color: lib.palette(accent6); } }
 
 		body.is-loading & {
 			&:after {
@@ -117,18 +120,18 @@
 			}
 
 			> .inner {
-				@include vendor('filter', 'blur(0.125em)');
-				@include vendor('transform', 'translateX(-0.5em)');
+				@include lib.vendor('filter', 'blur(0.125em)');
+				@include lib.vendor('transform', 'translateX(-0.5em)');
 				opacity: 0;
 			}
 		}
 
-		@include breakpoint(large) {
+		@include lib.breakpoint(large) {
 			background-attachment: scroll;
 		}
 
-		@include breakpoint(small) {
-			@include padding(3em, 0, (2em, 0, 0, 0));
+		@include lib.breakpoint(small) {
+			@include lib.padding(3em, 0, (2em, 0, 0, 0));
 			height: auto;
 			margin-bottom: -2.75em;
 			max-height: none;
@@ -145,7 +148,7 @@
 
 					> * {
 						margin-left: 0;
-						margin-bottom: _size(element-margin);
+						margin-bottom: lib.size(element-margin);
 					}
 				}
 			}
@@ -157,8 +160,8 @@
 			}
 		}
 
-		@include breakpoint(xsmall) {
-			@include padding(4em, 0, (2em, 0, 0, 0));
+		@include lib.breakpoint(xsmall) {
+			@include lib.padding(4em, 0, (2em, 0, 0, 0));
 
 			> .inner {
 				.content {
@@ -171,7 +174,7 @@
 			}
 
 			&.major {
-				@include padding(6em, 0, (2em, 0, 0, 0));
+				@include lib.padding(6em, 0, (2em, 0, 0, 0));
 			}
 		}
 	}

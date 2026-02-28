@@ -1,6 +1,9 @@
 /// Makes an element's :before pseudoelement a FontAwesome icon.
 /// @param {string} $content Optional content value to use.
 /// @param {string} $where Optional pseudoelement to target (before or after).
+@use 'functions' as fn;
+@use 'skel' as skel;
+
 @mixin icon($content: false, $where: before) {
 
 	text-decoration: none;
@@ -33,8 +36,23 @@
 		$important: '!important';
 	}
 
-	padding: ($tb + nth($pad,1)) ($lr + nth($pad,2)) max(0.1em, $tb - _size(element-margin) + nth($pad,3)) ($lr + nth($pad,4)) #{$important};
+	padding: ($tb + nth($pad,1)) ($lr + nth($pad,2)) max(0.1em, $tb - fn.size(element-margin) + nth($pad,3)) ($lr + nth($pad,4)) #{$important};
 
+}
+
+/// Inner mixin used by layout elements (moved here so it's available to all partials).
+@mixin inner {
+	> .inner {
+		@include padding(4em, 0);
+		margin: 0 auto;
+		max-width: fn.size(inner);
+		width: calc(100% - 6em);
+
+		@include skel.breakpoint(small) {
+			@include padding(3em, 0);
+			width: calc(100% - 3em);
+		}
+	}
 }
 
 /// Encodes a SVG data URL so IE doesn't choke (via codepen.io/jakob-e/pen/YXXBrp).

@@ -1,8 +1,12 @@
-///
-/// Forty by HTML5 UP
-/// html5up.net | @ajlkn
-/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-///
+@use '../libs/index' as lib;
+
+/**
+ * Forty by HTML5 UP
+ * html5up.net | @ajlkn
+ * Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+ */
+
+@import '../libs/skel';
 
 /* Basic */
 
@@ -17,22 +21,13 @@
 		}
 
 	// Ensures page width is always >=320px.
-		@include breakpoint(xsmall) {
-			html, body {
-				min-width: 320px;
-			}
-		}
+		@include lib.breakpoint(xsmall) { html, body { min-width: 320px; } }
 
 	body {
-		background: _palette(bg);
+		background: lib.palette(bg);
 
 		// Prevents animation/transition "flicker" on page load.
 		// Automatically added/removed by js/main.js.
-			&.is-loading {
-				*, *:before, *:after {
-					@include vendor('animation', 'none !important');
-					@include vendor('transition', 'none !important');
-				}
-			}
+			&.is-loading { *, *:before, *:after { @include lib.vendor('animation', 'none !important'); @include lib.vendor('transition', 'none !important'); } }
 
 	}

@@ -4,33 +4,33 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
+@use 'sass:color' as color;
+@use 'sass:math' as math;
+@use '../libs/index' as lib;
+
+// Use lib._palette, lib._font, lib._size, and lib.breakpoint etc.
+
 /* Type */
 
 	body, input, select, textarea {
-		color: _palette(fg);
-		font-family: _font(family);
+		color: lib.palette(fg);
+		font-family: lib.font(family);
 		font-size: 17pt;
-		font-weight: _font(weight);
-		letter-spacing: _font(letter-spacing);
+		font-weight: lib.font(weight);
+		letter-spacing: lib.font(letter-spacing);
 		line-height: 1.65;
 
-		@include breakpoint(xlarge) {
-			font-size: 14pt;
-		}
+		@include lib.breakpoint(xlarge) { font-size: 14pt; }
 
-		@include breakpoint(large) {
-			font-size: 12pt;
-		}
+		@include lib.breakpoint(large) { font-size: 12pt; }
 
-		@include breakpoint(xxsmall) {
-			font-size: 11pt;
-		}
+		@include lib.breakpoint(xxsmall) { font-size: 11pt; }
 	}
 
 	a {
-		@include vendor('transition', (
-			'color #{_duration(transition)} ease-in-out',
-			'border-bottom-color #{_duration(transition)} ease-in-out'
+		@include lib.vendor('transition', (
+			'color #{lib.duration(transition)} ease-in-out',
+			'border-bottom-color #{lib.duration(transition)} ease-in-out'
 		));
 		border-bottom: dotted 1px;
 		color: inherit;
@@ -38,17 +38,17 @@
 
 		&:hover {
 			border-bottom-color: transparent;
-			color: _palette(highlight) !important;
+			color: lib.palette(highlight) !important;
 		}
 
 		&:active {
-			color: desaturate(darken(_palette(highlight), 15), 5) !important;
+			color: color.adjust(lib.palette(highlight), $lightness: -15%, $saturation: -5%) !important;
 		}
 	}
 
 	strong, b {
-		color: _palette(fg-bold);
-		font-weight: _font(weight-bold);
+		color: lib.palette(fg-bold);
+		font-weight: lib.font(weight-bold);
 	}
 
 	em, i {
@@ -56,7 +56,7 @@
 	}
 
 	p {
-		margin: 0 0 _size(element-margin) 0;
+		margin: 0 0 lib.size(element-margin) 0;
 	}
 
 	blockquote > p {
@@ -64,10 +64,10 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: _palette(fg-bold);
-		font-weight: _font(weight-bold);
+		color: lib.palette(fg-bold);
+		font-weight: lib.font(weight-bold);
 		line-height: 1.65;
-		margin: 0 0 (_size(element-margin) * 0.5) 0;
+		margin: 0 0 (lib.size(element-margin) * 0.5) 0;
 
 		a {
 			color: inherit;
@@ -99,7 +99,7 @@
 		font-size: 0.7em;
 	}
 
-	@include breakpoint(small) {
+	@include lib.breakpoint(small) {
 		h1 {
 			font-size: 2em;
 		}
@@ -126,15 +126,15 @@
 	}
 
 	blockquote {
-		border-left: solid 4px _palette(border);
+		border-left: solid 4px lib.palette(border);
 		font-style: italic;
-		margin: 0 0 _size(element-margin) 0;
-		padding: (_size(element-margin) / 4) 0 (_size(element-margin) / 4) _size(element-margin);
+		margin: 0 0 lib.size(element-margin) 0;
+		padding: (math.div(lib.size(element-margin), 4)) 0 (math.div(lib.size(element-margin), 4)) lib.size(element-margin);
 	}
 
 	code {
-		background: _palette(border-bg);
-		font-family: _font(family-fixed);
+		background: lib.palette(border-bg);
+		font-family: lib.font(family-fixed);
 		font-size: 0.9em;
 		margin: 0 0.25em;
 		padding: 0.25em 0.65em;
@@ -142,9 +142,9 @@
 
 	pre {
 		-webkit-overflow-scrolling: touch;
-		font-family: _font(family-fixed);
+		font-family: lib.font(family-fixed);
 		font-size: 0.9em;
-		margin: 0 0 _size(element-margin) 0;
+		margin: 0 0 lib.size(element-margin) 0;
 
 		code {
 			display: block;
@@ -156,12 +156,10 @@
 
 	hr {
 		border: 0;
-		border-bottom: solid 1px _palette(border);
-		margin: _size(element-margin) 0;
+		border-bottom: solid 1px lib.palette(border);
+		margin: lib.size(element-margin) 0;
 
-		&.major {
-			margin: (_size(element-margin) * 1.5) 0;
-		}
+		&.major { margin: (lib.size(element-margin) * 1.5) 0; }
 	}
 
 	.align-left {
@@ -175,3 +173,7 @@
 	.align-right {
 		text-align: right;
 	}
+
+	@include lib.breakpoint(small) {
+        header.major > p br { display: none; }
+    }

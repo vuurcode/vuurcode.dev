@@ -1,3 +1,5 @@
+@use '../libs/index' as lib;
+//
 ///
 /// Forty by HTML5 UP
 /// html5up.net | @ajlkn
@@ -40,27 +42,19 @@ img {
 			top: 0.25em;
 		}
 
-		&.fit {
-			display: block;
-			margin: 0 0 _size(element-margin) 0;
-			width: 100%;
+		&.fit { display: block; margin: 0 0 lib.size(element-margin) 0; width: 100%;
 
 			img {
 				width: 100%;
 			}
 		}
 
-		&.main {
-			display: block;
-			margin: (_size(element-margin) * 1.25) 0;
-			width: 100%;
+		&.main { display: block; margin: (lib.size(element-margin) * 1.25) 0; width: 100%;
 
 			img {
 				width: 100%;
 			}
 
-			@include breakpoint(small) {
-				margin: (_size(element-margin) * 0.75) 0;
-			}
+			@include lib.breakpoint(small) { margin: (lib.size(element-margin) * 0.75) 0; }
 		}
 	}

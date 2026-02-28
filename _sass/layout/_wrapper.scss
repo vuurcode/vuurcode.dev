@@ -7,9 +7,9 @@
 /* Wrapper */
 
 	#wrapper {
-		@include vendor('transition', (
-			'filter #{_duration(menu)} ease',
-			'-webkit-filter #{_duration(menu)} ease',
+		@include lib.vendor('transition', (
+			'filter #{lib.duration(menu)} ease',
+			'-webkit-filter #{lib.duration(menu)} ease',
 			'opacity 0.375s ease-out'
 		));
 		padding-top: 3.25em;
@@ -19,10 +19,10 @@
 		}
 
 		> * {
-			@include inner;
+			@include lib.inner;
 		}
 
-		@include breakpoint(small) {
+		@include lib.breakpoint(small) {
 			padding-top: 2.75em;
 		}
 	}
