@@ -1,28 +1,18 @@
-title: Forty
-subtitle: by HTML5 UP
-email: youremailaddress@gmail.com
+title: vuurcode.dev
+subtitle: Forty by HTML5 UP
 description: A responsive site template designed by HTML5 Up<br /> and released under the Creative Commons.
 baseurl: ""
-url: "http://localhost:4000"
+url: "https://vuurcode.dev"
 author:
-  name: Dennis
-street_address: 1234 Somewhere Road
-city: Nashville
-state: TN
-zip_code: 55555
-country: United States of America
-phone: (716) 555-5555
+  name: Vuurcode
 
 # homepage tiles
 tiles-source: pages # accepts "posts" or "pages"
-tiles-count: 6
+tiles-count: 2
 
 # social settings
 socials:
-  GitHub: https://github.com/andrewbanchich
-  Google-Plus: https://plus.google.com/u/0/+AndrewBanchich
-  LinkedIn: https://www.linkedin.com/in/andrew-banchich-a4ba1195
-  Twitter: https://twitter.com/andrewbanchich
+  GitHub: https://github.com/vuurcode
 
 # build settings
 markdown: kramdown
