@@ -1,70 +1,7 @@
-<!-- Contact -->
-<section id="contact">
-	<div class="inner">
-		<section>
-			<form method="post" action="#">
-				<div class="field half first">
-					<label for="name">Name</label>
-					<input type="text" name="name" id="name" />
-				</div>
-				<div class="field half">
-					<label for="email">Email</label>
-					<input type="text" name="email" id="email" />
-				</div>
-				<div class="field">
-					<label for="message">Message</label>
-					<textarea name="message" id="message" rows="6"></textarea>
-				</div>
-				<ul class="actions">
-					<li><input type="submit" value="Send Message" class="special" /></li>
-					<li><input type="reset" value="Clear" /></li>
-				</ul>
-			</form>
-		</section>
-		<section class="split">
-			{% if site.author.email != "" %}
-			<section>
-				<div class="contact-method">
-					<span class="icon alt fa-envelope"></span>
-					<h3>Email</h3>
-					<a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
-				</div>
-			</section>
-			{% endif %}
-			{% if site.author.phone != "" %}
-			<section>
-				<div class="contact-method">
-					<span class="icon alt fa-phone"></span>
-					<h3>Phone</h3>
-					<span>{{ site.author.phone }}</span>
-				</div>
-			</section>
-			{% endif %}
-			{% if site.author.address != "" %}
-			<section>
-				<div class="contact-method">
-					<span class="icon alt fa-home"></span>
-					<h3>Address</h3>
-					<span>{{ site.author.address }}</span>
-				</div>
-			</section>
-			{% endif %}
-		</section>
-	</div>
-</section>
 
 <!-- Footer -->
 <footer id="footer">
 	<div class="inner">
-		<ul class="icons">
-			{% for social in site.socials %}
-			<li>
-				<a href="{{ social.url }}" class="icon alt {{ social.icon }}" target="_blank" rel="noopener noreferrer" aria-label="{{ social.title }}">
-					<span class="label">{{ social.title }}</span>
-				</a>
-			</li>
-			{% endfor %}
-		</ul>
 		<ul class="copyright">
 			<li>&copy; {{ site.title }}</li>
 			<li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>

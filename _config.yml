@@ -5,13 +5,13 @@ baseurl: ""
 url: "https://vuurcode.dev"
 author:
   name: Vuurcode
-  email: info@vuurcode.dev
+  email: ""
   phone: ""
   address: ""
 
 # homepage tiles
 tiles-source: posts # accepts "posts" or "pages"
-tiles-count: 6
+tiles-count: 3
 
 # social settings
 socials:

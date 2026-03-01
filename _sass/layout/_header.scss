@@ -61,6 +61,7 @@
 		nav {
 			@include lib.vendor('display', 'flex');
 			@include lib.vendor('justify-content', 'flex-end');
+			@include lib.vendor('align-items', 'center');
 			@include lib.vendor('flex-grow', '1');
 			height: inherit;
 			line-height: inherit;
@@ -74,6 +75,13 @@
 				padding: 0 0.75em;
 				position: relative;
 				vertical-align: middle;
+
+				&.icon.alt {
+					display: flex;
+					align-items: center;
+					line-height: normal;
+					padding: 0 1.5em !important;
+				}
 
 				&:last-child {
 					padding-right: 1.5em;
