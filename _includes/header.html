@@ -4,4 +4,22 @@
 <!-- Header -->
 <header id="header"{% if page.layout == "landing" %} class="alt style2"{% endif %}{% if page.layout == "home" %} class="alt"{% endif %}>
 	<a href="{{ "" | absolute_url }}/" class="logo"><strong>{{ site.title }}</strong> <span>{{ site.subtitle }}</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
 </header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+		<li><a href="{{ "" | absolute_url }}/">Home</a></li>
+		<li><a href="{{ "landing" | absolute_url }}">Landing</a></li>
+		<li><a href="{{ "all_posts" | absolute_url }}">All Posts</a></li>
+		<li><a href="{{ "elements" | absolute_url }}">Elements</a></li>
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Get Started</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+

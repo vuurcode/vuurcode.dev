@@ -5,14 +5,19 @@ baseurl: ""
 url: "https://vuurcode.dev"
 author:
   name: Vuurcode
+  email: info@vuurcode.dev
+  phone: ""
+  address: ""
 
 # homepage tiles
-tiles-source: pages # accepts "posts" or "pages"
-tiles-count: 2
+tiles-source: posts # accepts "posts" or "pages"
+tiles-count: 6
 
 # social settings
 socials:
-  GitHub: https://github.com/vuurcode
+  - title: GitHub
+    icon: fa-github
+    url: https://github.com/vuurcode
 
 # build settings
 markdown: kramdown

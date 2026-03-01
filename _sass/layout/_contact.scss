@@ -13,7 +13,7 @@
 		overflow-x: hidden;
 
 		> .inner {
-			@include vendor('display', 'flex');
+			@include lib.vendor('display', 'flex');
 			padding: 0 !important;
 
 			> :nth-child(2n - 1) {
@@ -54,7 +54,7 @@
 			}
 		}
 
-		@include breakpoint(medium) {
+		@include lib.breakpoint(medium) {
 			> .inner {
 				display: block;
 
@@ -86,7 +86,7 @@
 			}
 		}
 
-		@include breakpoint(small) {
+		@include lib.breakpoint(small) {
 			> .inner {
 				> :nth-child(2n - 1) {
 					@include lib.padding(3em, 0, (0, 0, 0, 0));

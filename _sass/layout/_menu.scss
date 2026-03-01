@@ -43,7 +43,7 @@
 				'opacity #{lib.duration(menu)} ease',
 				'visibility #{lib.duration(menu)}'
 			));
-			@include vendor('transform', 'rotateX(20deg)');
+			@include lib.vendor('transform', 'rotateX(20deg)');
 			-webkit-overflow-scrolling: touch;
 			max-width: 100%;
 			max-height: 100vh;
@@ -58,9 +58,9 @@
 			> :last-child { margin-bottom: (lib.size(element-margin) * 1.5); }
 		}
 
-		ul { margin: 0 0 (lib.size(element-margin) * 0.5) 0; }
+		ul { margin: 0 0 (lib.size(element-margin) * 0.5) 0;
 
-		&.links {
+			&.links {
 			list-style: none;
 			padding: 0;
 
@@ -86,6 +86,7 @@
 
 				&:first-child { > a:not(.button) { border-top: 0 !important; } }
 			}
+		}
 		}
 
 		.close {
@@ -121,12 +122,12 @@
 			}
 
 			&:before {
-				background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" zoomAndPan="disable"><style>line { stroke: #{lib.palette(fg-bold)}; stroke-width: 2; }</style><line x1="0" y1="0" x2="20" y2="20" /><line x1="20" y1="0" x2="0" y2="20" /></svg>');
+				background-image: lib.svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" zoomAndPan="disable"><style>line { stroke: #{lib.palette(fg-bold)}; stroke-width: 2; }</style><line x1="0" y1="0" x2="20" y2="20" /><line x1="20" y1="0" x2="0" y2="20" /></svg>');
 			}
 
 			&:after {
-				background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" zoomAndPan="disable"><style>line { stroke: #{lib.palette(highlight)}; stroke-width: 2; }</style><line x1="0" y1="0" x2="20" y2="20" /><line x1="20" y1="0" x2="0" y2="20" /></svg>');
-				opacity: 0;
+				background-image: lib.svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" zoomAndPan="disable"><style>line { stroke: #{lib.palette(highlight)}; stroke-width: 2; }</style><line x1="0" y1="0" x2="20" y2="20" /><line x1="20" y1="0" x2="0" y2="20" /></svg>');
+			opacity: 0;
 			}
 
 			&:hover, &:active {
@@ -137,33 +138,33 @@
 		}
 	}
 
-	body.is-ie {
-		#menu {
-			background: color.adjust(lib.palette(bg-alt), $alpha: -0.025);
-		}
+body.is-ie {
+	#menu {
+		background: color.adjust(lib.palette(bg-alt), $alpha: -0.025);
+	}
+}
+
+body.is-menu-visible {
+    #wrapper {
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+	-webkit-transform: translate3d(0,0,0);
+	-webkit-transform: translateZ(0);
+	backface-visibility: hidden;
+	perspective: 1000;
+	transform: translate3d(0,0,0);
+	transform: translateZ(0);
 	}
 
-	body.is-menu-visible {
-	    #wrapper {
-		-webkit-backface-visibility: hidden;
-		-webkit-perspective: 1000;
-		-webkit-transform: translate3d(0,0,0);
-		-webkit-transform: translateZ(0);
-		backface-visibility: hidden;
-		perspective: 1000;
-		transform: translate3d(0,0,0);
-		transform: translateZ(0);
-		}
+	#menu {
+		@include lib.vendor('pointer-events', 'auto');
+		opacity: 1;
+		visibility: visible;
 
-		#menu {
-			@include vendor('pointer-events', 'auto');
+		.inner {
+			@include lib.vendor('transform', 'none');
 			opacity: 1;
 			visibility: visible;
-
-			.inner {
-				@include lib.vendor('transform', 'none');
-				opacity: 1;
-				visibility: visible;
-			}
 		}
 	}
+}

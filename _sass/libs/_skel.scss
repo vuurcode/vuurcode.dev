@@ -69,6 +69,27 @@
 
 // Functions.
 
+	/// Replaces all occurrences of a substring within a string (for vendor prefix expansion).
+	/// Also handles lists by processing each item individually.
+	/// @param {string|list} $string Original string or list of strings.
+	/// @param {string} $search Substring to find.
+	/// @param {string} $replace Replacement string.
+	/// @return {string|list} Updated string or list.
+	@function str-replace-all($string, $search, $replace: '') {
+		@if type-of($string) == 'list' {
+			$result: ();
+			@each $item in $string {
+				$result: append($result, str-replace-all($item, $search, $replace), comma);
+			}
+			@return $result;
+		}
+		$index: str-index($string, $search);
+		@if $index {
+			@return str-slice($string, 1, $index - 1) + $replace + str-replace-all(str-slice($string, $index + str-length($search)), $search, $replace);
+		}
+		@return $string;
+	}
+
 	/// Removes a specific item from a list.
 	/// @author Hugo Giraudel
 	/// @param {list} $list List.
