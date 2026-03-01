@@ -3,7 +3,7 @@
 
 <!-- Header -->
 <header id="header"{% if page.layout == "landing" %} class="alt style2"{% endif %}{% if page.layout == "home" %} class="alt"{% endif %}>
-	<a href="{{ "" | absolute_url }}/" class="logo"><strong>{{ site.title }}</strong> <span>{{ site.subtitle }}</span></a>
+	<a href="{{ "https://vuurcode.dev" | absolute_url }}" class="logo"><strong>{{ site.title }}</strong> <span>{{ site.subtitle }}</span></a>
 	<nav>
 		{% for social in site.socials %}
 		<a href="{{ social.url }}" class="icon alt {{ social.icon }}" target="_blank" rel="noopener noreferrer" aria-label="{{ social.title }}"><span class="label">{{ social.title }}</span></a>
