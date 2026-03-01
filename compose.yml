@@ -8,7 +8,7 @@ services:
              bundle exec jekyll serve --host 0.0.0.0 --livereload"
     ports:
       - "4000:4000"
-      - "35729:35729"
+      - "35729:35729"  # Live reload port
     volumes:
       - .:/srv/jekyll
     environment:
