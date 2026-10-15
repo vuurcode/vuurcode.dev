@@ -1,0 +1,4 @@
+# Local development overrides, loaded after _config.yml by compose.yml.
+# The service worker would serve cached pages and hide changes from livereload.
+pwa:
+  enabled: false

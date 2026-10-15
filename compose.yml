@@ -3,9 +3,7 @@ services:
     build:
         context: .
         dockerfile: Containerfile
-    command: >
-      sh -c "sass assets/css/main.scss assets/css/main.css --no-source-map --style=compressed &&
-             bundle exec jekyll serve --host 0.0.0.0 --livereload"
+    command: bundle exec jekyll serve --host 0.0.0.0 --livereload --force_polling --config _config.yml,_config.dev.yml
     ports:
       - "4000:4000"  # http://localhost:4000
       - "35729:35729"  # Live reload port
@@ -13,3 +11,9 @@ services:
       - .:/srv/jekyll
     environment:
       - JEKYLL_ENV=development
+    networks:
+      - dashboard-net
+
+networks:
+  dashboard-net:
+    driver: bridge
