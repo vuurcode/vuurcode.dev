@@ -1,22 +1,50 @@
+<!-- The Footer -->
 
-<!-- Footer -->
-<footer id="footer">
-	<div class="inner">
-		<ul class="copyright">
-			<li>&copy; <a href="https://github.com/vuurcode">{{ site.title }}</a></li>
-			<li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
-			<li>Jekyll integration: <a href="https://github.com/andrewbanchich" target="_blank">Andrew Banchich</a></li>
-		</ul>
-	</div>
+<footer
+  aria-label="Site Info"
+  class="
+    d-flex flex-column justify-content-center text-muted
+    flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
+  "
+>
+  <p>
+    {{- '©' }}
+    <time>{{ 'now' | date: '%Y' }}</time>
+
+    {% if site.social.links %}
+      <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>.
+    {% else %}
+      <em class="fst-normal">{{ site.social.name }}</em>.
+    {% endif %}
+
+    {% if site.data.locales[include.lang].copyright.brief %}
+      <span
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="{{ site.data.locales[include.lang].copyright.verbose }}"
+      >
+        {{- site.data.locales[include.lang].copyright.brief -}}
+      </span>
+    {% endif %}
+  </p>
+
+  <p>
+    {%- capture _platform -%}
+      <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
+    {%- endcapture -%}
+
+    {%- capture _theme -%}
+      <a
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="v{{ theme.version }}"
+        href="https://github.com/cotes2020/jekyll-theme-chirpy"
+        target="_blank"
+        rel="noopener"
+      >Chirpy</a>
+    {%- endcapture -%}
+
+    {{ site.data.locales[include.lang].meta | replace: ':PLATFORM', _platform | replace: ':THEME', _theme }}
+    Theme by <a href="https://github.com/cotes2020" target="_blank" rel="noopener">Cotes Chung</a>.
+  </p>
 </footer>
-
-</div>
-
-<!-- Scripts -->
-<script src="{{ "assets/js/jquery.min.js" | absolute_url }}"></script>
-<script src="{{ "assets/js/jquery.scrolly.min.js" | absolute_url }}"></script>
-<script src="{{ "assets/js/jquery.scrollex.min.js" | absolute_url }}"></script>
-<script src="{{ "assets/js/skel.min.js" | absolute_url }}"></script>
-<script src="{{ "assets/js/util.js" | absolute_url }}"></script>
-<!--[if lte IE 8]><script src="{{ "assets/js/ie/respond.min.js" | absolute_url }}"></script><![endif]-->
-<script src="{{ "assets/js/main.js" | absolute_url }}"></script>

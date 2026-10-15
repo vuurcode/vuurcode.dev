@@ -1,0 +1,15 @@
+<!-- Links panel, replacing the theme's list of recently updated posts. Entries live in _data/links.yml. -->
+
+{% if site.data.links.size > 0 %}
+  <section id="access-links">
+    <h2 class="panel-heading">Links</h2>
+    <ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2">
+      {% for link in site.data.links %}
+        <li class="text-truncate lh-lg">
+          <a href="{{ link.url }}" rel="noopener">{{ link.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+  <!-- #access-links -->
+{% endif %}

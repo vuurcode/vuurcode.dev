@@ -1,0 +1,7 @@
+<!-- A looping, muted demo clip with a poster. Parameters: name (file under /assets/img, without extension), width, height, alt, narrow (optional: centre it at phone width). -->
+{%- capture style -%}
+  {%- if include.narrow -%}display: block; width: 100%; max-width: 280px; height: auto; margin: 0 auto;{%- else -%}width: 100%; height: auto;{%- endif -%}
+{%- endcapture -%}
+<video controls autoplay loop muted playsinline data-demo-video width="{{ include.width }}" height="{{ include.height }}" style="{{ style }}" poster="/assets/img/{{ include.name }}.jpg" aria-label="{{ include.alt }}">
+  <source src="/assets/img/{{ include.name }}.webm" type="video/webm">
+</video>
