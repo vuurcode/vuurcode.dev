@@ -17,10 +17,10 @@ An experimental and unofficial live view of speed skating results, built for the
 
 ## A reworked UI and UX
 
+An interface built for readability that puts all the available data to use, so every race is easier to follow. Lap times, finish times and personal bests are all visible at a glance, on a wide screen and on a phone.
+
 > The recordings on this page are sped up for demo purposes. A real race takes much longer. They loop silently; use the controls to pause them.
 {: .prompt-info }
-
-An interface built for readability that puts all the available data to use, so every race is easier to follow. Lap times, finish times and personal bests are all visible at a glance, on a wide screen and on a phone.
 
 {% include demo-video.html name="live-results-desktop" caption="On a wide screen: heats sit side by side, and lap times, personal bests and finish times fill in as the race is timed." alt="Screen recording of the dashboard on a wide screen, with lap times of a live race filling in" %}
 
@@ -34,25 +34,28 @@ An interface built for readability that puts all the available data to use, so e
 
 ## Display settings
 
+Tune how an individual race is shown. Switch the lap time colours on or off, and set how large the difference between two laps has to be before a lap turns green, orange or purple.
+
 > The recordings on this page are sped up for demo purposes. A real race takes much longer. They loop silently; use the controls to pause them.
 {: .prompt-info }
-
-Tune how an individual race is shown. Switch the lap time colours on or off, and set how large the difference between two laps has to be before a lap turns green, orange or purple.
 
 {% include demo-video.html name="live-results-settings" caption="Open the display settings, switch the lap time colours off and on again, and raise the lap time difference threshold, to see how the badges of a live race change." alt="Screen recording of the display settings on a wide screen, switching the lap time colours of an individual race off and on and raising the lap time difference threshold" %}
 
 ## Mass start timeline
 
-> The recordings on this page are sped up for demo purposes. A real race takes much longer. They loop silently; use the controls to pause them.
-{: .prompt-info }
-
 Follow the groups and the finish line of a mass start on the race clock, with the gaps between skaters shown as they open and close.
 
 ### On a wide screen
 
+> The recordings on this page are sped up for demo purposes. A real race takes much longer. They loop silently; use the controls to pause them.
+{: .prompt-info }
+
 {% include demo-video.html name="live-results-mass-start-wide" caption="A mass start on a wide screen: the skaters start lined up at the back of the timeline and close in on the race clock as the lap is skated, with the leader and the gaps listed below." alt="Screen recording of the dashboard on a wide screen, with the mass start timeline of a live race, showing the skaters closing in on the race clock" %}
 
 ### On a phone
+
+> The recordings on this page are sped up for demo purposes. A real race takes much longer. They loop silently; use the controls to pause them.
+{: .prompt-info }
 
 <div style="display: flex; gap: 1rem; align-items: stretch;">
   {% include demo-video.html name="live-results-mass-start-a" caption="Lap 2 of a mass start: skaters are lined up against the race clock, and the gaps between them open and close as lap 3 begins." alt="Screen recording of the dashboard on a narrow phone screen, with the mass start timeline moving from lap 2 to lap 3" half=true %}
