@@ -1,8 +1,8 @@
-<!-- A looping, muted demo clip with a poster, recorded at 2x. Parameters: name (file under /assets/img, without extension), alt, caption (shown above the clip), narrow (optional: a phone-sized clip, centred), half (optional: a phone-sized clip that takes half the row, for placing two clips in a flex row). -->
+<!-- A looping, muted demo clip with a poster, recorded at 2x. Parameters: name (file under /assets/img, without extension), alt, caption (shown above the clip), narrow (optional: a phone-sized clip, centred), half (optional: a phone-sized clip that takes half the row, for placing two clips in a flex row; the clip sits at the bottom of its column so both clips line up whatever the caption length). -->
 {%- if include.narrow or include.half -%}
   {%- assign width = 780 -%}{%- assign height = 1600 -%}
   {%- if include.half -%}
-    {%- assign style = "display: block; width: 100%; height: auto;" -%}
+    {%- assign style = "display: block; width: 100%; height: auto; margin-top: auto;" -%}
   {%- else -%}
     {%- assign style = "display: block; width: 100%; max-width: 280px; height: auto; margin: 0 auto;" -%}
   {%- endif -%}
@@ -10,7 +10,7 @@
   {%- assign width = 2400 -%}{%- assign height = 1520 -%}
   {%- assign style = "width: 100%; height: auto;" -%}
 {%- endif -%}
-{%- if include.half -%}<div style="flex: 1 1 0; min-width: 0;">{%- endif -%}
+{%- if include.half -%}<div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column;">{%- endif -%}
 <p style="font-size: 0.85em">{{ include.caption }}</p>
 <video controls autoplay loop muted playsinline data-demo-video width="{{ width }}" height="{{ height }}" style="{{ style }}" poster="/assets/img/{{ include.name }}.jpg" aria-label="{{ include.alt }}">
   <source src="/assets/img/{{ include.name }}.webm" type="video/webm">
