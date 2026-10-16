@@ -48,6 +48,12 @@ Tune how an individual race is shown. Switch the lap time colours on or off, and
 
 Follow the groups and the finish line of a mass start on the race clock, with the gaps between skaters shown as they open and close.
 
+### On a wide screen
+
+{% include demo-video.html name="live-results-mass-start-wide" caption="A mass start on a wide screen: the skaters start lined up at the back of the timeline and close in on the race clock as the lap is skated, with the leader and the gaps listed below." alt="Screen recording of the dashboard on a wide screen, with the mass start timeline of a live race, showing the skaters closing in on the race clock" %}
+
+### On a phone
+
 <div style="display: flex; gap: 1rem; align-items: stretch;">
   {% include demo-video.html name="live-results-mass-start-a" caption="Lap 2 of a mass start: skaters are lined up against the race clock, and the gaps between them open and close as lap 3 begins." alt="Screen recording of the dashboard on a narrow phone screen, with the mass start timeline moving from lap 2 to lap 3" half=true %}
   {% include demo-video.html name="live-results-mass-start-b" caption="The same race, scrolled slowly down to the lower half: the skaters behind the leaders and the laps they have completed." alt="Screen recording of the dashboard on a narrow phone screen, scrolling down the mass start timeline to the skaters at the back" half=true %}
