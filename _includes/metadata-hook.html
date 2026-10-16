@@ -1,0 +1,5 @@
+<script>
+  if (location.hostname.indexOf('www.') === 0) {
+    location.replace(location.protocol + '//' + location.hostname.slice(4) + (location.port ? ':' + location.port : '') + location.pathname + location.search + location.hash);
+  }
+</script>
