@@ -3,6 +3,14 @@
     location.replace(location.protocol + '//' + location.hostname.slice(4) + (location.port ? ':' + location.port : '') + location.pathname + location.search + location.hash);
   }
 </script>
+<script>
+  // The site is not a PWA. Remove a service worker that an earlier visit registered, so it cannot serve stale pages.
+  if (navigator.serviceWorker) {
+    navigator.serviceWorker.getRegistrations().then(function (registrations) {
+      registrations.forEach(function (registration) { registration.unregister(); });
+    });
+  }
+</script>
 <style>
   /* On the home page the sidebar is the navigation, so below the desktop breakpoint it stays open
      (without a toggle), narrower than usual, and the content takes the width that is left. */
