@@ -3,3 +3,19 @@
     location.replace(location.protocol + '//' + location.hostname.slice(4) + (location.port ? ':' + location.port : '') + location.pathname + location.search + location.hash);
   }
 </script>
+<style>
+  /* On the home page the sidebar is the navigation, so below the desktop breakpoint it stays open
+     (without a toggle), narrower than usual, and the content takes the width that is left. */
+  @media (max-width: 991.98px) {
+    body[data-page="home"] { --home-sidebar-width: 200px; }
+    body[data-page="home"] #sidebar { width: var(--home-sidebar-width); transform: translateX(0); }
+    body[data-page="home"] #sidebar-trigger { display: none; }
+    body[data-page="home"] #sidebar .profile-wrapper { padding-left: 1.25rem; padding-right: 0.75rem; }
+    body[data-page="home"] #sidebar .site-title { font-size: 1.35rem; }
+    body[data-page="home"] #sidebar .site-subtitle { font-size: 80%; }
+    body[data-page="home"] #sidebar li.nav-item { padding-left: 0.5rem; padding-right: 0.5rem; }
+    body[data-page="home"] #sidebar a.nav-link i { margin-right: 0.75rem; }
+    body[data-page="home"] #sidebar a.nav-link span { font-size: 72%; letter-spacing: 0; }
+    body[data-page="home"] #main-wrapper { transform: translateX(var(--home-sidebar-width)); width: calc(100% - var(--home-sidebar-width)); }
+  }
+</style>
