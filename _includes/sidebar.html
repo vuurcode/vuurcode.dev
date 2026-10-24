@@ -26,11 +26,10 @@
         </a>
       </li>
       <!-- live results -->
-      <li class="nav-item">
-        <a href="{{ '/live' | relative_url }}" class="nav-link" aria-label="Live Results Experiment (opens an external site)">
+      <li class="nav-item{% if page.embed %}{{ " active" }}{% endif %}">
+        <a href="{{ '/live/' | relative_url }}" class="nav-link">
           <i class="fa-fw fas fa-stopwatch"></i>
           <span>LIVE RESULTS EXPERIMENT</span>
-          <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-1" aria-hidden="true"></i>
         </a>
       </li>
       <!-- the real tabs -->

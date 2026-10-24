@@ -28,6 +28,9 @@ url: "https://vuurcode.dev"
 github:
   username: vuurcode
 
+# Where the Live Results Experiment runs. The /live page frames it and the old post redirects to it.
+live_results_url: "https://live-results-experiment.vuurcode.dev"
+
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer

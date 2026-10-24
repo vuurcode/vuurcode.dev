@@ -2,3 +2,6 @@
 # The service worker would serve cached pages and hide changes from livereload.
 pwa:
   enabled: false
+
+# The experiment's dev server.
+live_results_url: "http://localhost:4200"

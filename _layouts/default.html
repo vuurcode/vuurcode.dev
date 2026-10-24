@@ -17,7 +17,7 @@ layout: compress
 >
   {% include head.html lang=lang %}
 
-  <body{% if page.layout == 'home' %} data-page="home"{% endif %}>
+  <body{% if page.layout == 'home' %} data-page="home"{% elsif page.embed %} data-page="embed"{% endif %}>
     {% include sidebar.html lang=lang %}
 
     <div id="main-wrapper" class="d-flex justify-content-center">

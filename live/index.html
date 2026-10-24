@@ -1,5 +1,15 @@
 ---
-layout: null
+layout: default
+title: Live Results Experiment
+description: An experimental and unofficial live view of speed skating results.
+embed: true
 sitemap: false
 ---
-{% include live-redirect.html %}
+<!-- The experiment runs in a frame that fills the content area. The query string of this page (competitionId, heat) is passed on to the frame, which is where the app reads it. The frame source is set by script so the page does not load the app twice. -->
+<iframe id="live-frame" title="Live Results Experiment" allow="fullscreen" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<noscript>
+  <p class="p-3"><a href="{{ site.live_results_url }}">Open the Live Results Experiment</a>. It needs JavaScript to be shown on this page.</p>
+</noscript>
+<script>
+  document.getElementById('live-frame').src = '{{ site.live_results_url }}/' + location.search + location.hash;
+</script>
